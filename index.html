@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>香语传媒</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<!--引用百度地图API-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7ukOoqskNZwkhbTxpGXzXSRW"></script>
+    
+	<script type="text/javascript" src="scripts/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.scrollTo.js"></script>
+	<script type="text/javascript" src="scripts/jquery.nav.js"></script>
+		<script type="text/javascript" src="scripts/jquery.quicksand.js"></script> 
+	<script type="text/javascript" src="scripts/easing.js"></script> 
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".navMenu").onePageNav();
+			
+	// Clone applications to get a second collection
+	var $data = $(".portfolioItems").clone();
+	
+	//NOTE: Only filter on the main portfolio page, not on the subcategory pages
+	$('.portfolioSort li a').click(function(e) {
+		$(".portfolioSort li a").removeClass("activePSLink");	
+		// Use the last category class as the category to filter by. This means that multiple categories are not supported (yet)
+		var filterClass=$(this).attr('class').split(' ').slice(-1)[0];
+		
+		if (filterClass == 'all') {
+			var $filteredData = $data.find('.portfolioItem');
+		} else {
+			var $filteredData = $data.find('.portfolioItem[data-type=' + filterClass + ']');
+		}
+		$(".portfolioItems").quicksand($filteredData, {
+			duration: 800,
+			easing: 'swing',
+		});		
+		$(this).addClass("activePSLink"); 			
+		return false;
+	});
+	
+		});
+					function showfolio(number){
+			$.ajax({
+			type: 'POST',
+			dataType:'html',
+  url: "portfolio.php?id="+number,
+  success: function(data) { 
+  //alert(data);
+  $(".portfolio-1").empty().append(data).slideDown();
+}
+			});}
+function outhere(){
+$(".portfolio-1").slideUp();}
+</script>
+	<!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/iefix.css" />
+	<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+	<div id="home">
+		<div class="container">
+			<div class="header">
+				<div class="headerTop">
+					<div class="headerTop-1 clearfix">
+						<div class="headerLeft clearfix">
+							<h1><a href="#">&nbsp;</a></h1>
+							<p>专业APP渠道</p>
+						</div>
+						<div class="headerRight clearfix">
+						</div>
+					</div>
+				</div>
+				<div class="headerBottom">
+					<div class="headerBottom-1 clearfix">
+						<ul class="navMenu clearfix">
+							<li><a href="#home">主页</a></li>
+							<li><a href="#about_us">关于我们</a></li>
+							<li><a href="#portfolio">案例</a></li>
+							<li><a href="#services">服务</a></li>
+							<li><a href="#blog">资讯</a></li>
+							<li><a href="#contact">联系我们</a></li>
+						</ul>
+						<div class="info clearfix">
+							<p class="emailAddress">15820244290</p>
+							<p class="phoneNum"><a href="#">info@xymedia.com</a></p>
+						</div>
+					</div>
+					<div class="menuBottom"></div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="home-1">
+					<h1>香语传媒<br /><span>让<span class="agencySpan">您的APP流行起来</span></span></h1>
+					<a href="#" class="checkPortfolio">注册</a>
+					<a href="#" class="checkPortfolio">登录</a>
+				</div>
+				<div class="home-2">
+					<div class="home-2-center clearfix">
+						<div class="skills">
+							<div><img src="images/skill-image1.png" alt="minimal design" /></div>
+							<p>Android</p>
+						</div>
+						<div class="skills">
+							<div><img src="images/skill-image2.png" alt="minimal design" /></div>
+							<p>iOS</p>
+						</div>
+						<div class="skills">
+							<div><img src="images/skill-image4.png" alt="minimal design" /></div>
+							<p>Windows Phone</p>
+						</div>
+						<div class="skills">
+							<div><img src="images/skill-image3.png" alt="minimal design" /></div>
+							<p>Web App</p>
+						</div>
+						<div class="skills">
+							<div><img src="images/skill-image5.png" alt="minimal design" /></div>
+							<p>Wechat</p>
+						</div>
+						<div class="weCreate">
+							<h2>
+								我们致力于在移动生态圈,打造最方便,快捷,高效的传播路径,让每一个App发挥出最大的价值
+							</h2>
+						</div>
+					</div>
+				</div>
+				<div class="home-4 clearfix">
+				</div>
+			</div>
+		</div><!-- HOME SECTION END -->
+	</div>
+	
+	<div id="about_us">
+		<div class="container">
+			<div class="content">
+				<div class="contentTitle1">
+					<h1>关于<span>我们</span></h1>
+				</div>
+				<div class="aboutUs-1 clearfix">
+					<div class="aboutUs-left">
+						<p class="aboutPara1">
+							<span>香语传媒成立于2014年,由一群热爱移动互联网,热爱把玩各种APP的同好们共同创立</span><br /><br />香语传媒致力于为APP开发者们创建最简单,快捷,有效的分发渠道.香语传媒与各大APP市场,以及APP评测网站,论坛均保持紧密的联系.我们的职责是让每一个有创意的APP绽放光芒.
+						</p>
+						<h2>
+							"<span>香语</span>" 馨香之语,索绕耳畔 <span>~~</span> 
+							
+						</h2>
+						<div class="aboutUs-readMore clearfix">
+							<img src="images/aboutUsImage.jpg" alt="image" />
+							<div>
+								<p>
+									香语传媒为移动APP开发者提供最便捷有效的推广渠道,不知道如何推广您的应用?那就交给我们吧
+								</p>
+								<a href="#" class="readMore">发布APP</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- ABOUT US SECTION END -->
+	</div>
+
+	<div id="portfolio">
+		<div class="container">
+			<div class="content">
+				<div class="contentTitle1">
+					<h1>合作案例</h1>
+				</div>
+				<div class="portfolio-1">
+				</div>
+				
+				<div class="portfolio-2">
+					<ul class="portfolioSort clearfix">
+						<li><a href="javascript:;" class="activePSLink all">合作展示</a></li>
+					</ul>
+					<div class="portfolioItems clearfix">
+											<div class="portfolioItem" data-type="design" data-id="223">
+						<a href="javascript:showfolio('1');">
+							<img src="images/portImage1.jpg" alt="portfolio item image" />
+							</a>
+							<a href="javascript:showfolio('1');"><h2>美拍</h2></a>
+							<p>美拍(meipai.com)是美图秀秀出品的短视频社区，颠覆性的短视频新玩法，让普通视频一秒变身唯美韩剧、清新MV、怀旧电影等</p>
+						</div>
+												<div class="portfolioItem" data-type="wp" data-id="223w">
+						<a href="javascript:showfolio('2');">
+							<img src="images/portImage2.jpg" alt="portfolio item image" />
+							</a>
+							<a href="javascript:showfolio('2');"><h2>豌豆荚</h2></a>
+							<p>豌豆荚让你的安卓手机简单好用，轻松管理手机，免费下载应用、视频、音乐、壁纸和电子书，管理通讯录，快速备份手机</p>
+						</div>
+												<div class="portfolioItem" data-type="photography" data-id="22ss3">
+						<a href="javascript:showfolio('3');">
+							<img src="images/portImage3.jpg" alt="portfolio item image" />
+							</a>
+							<a href="javascript:showfolio('3');"><h2>安卓市场</h2></a>
+							<p>安卓市场（HiMarket）是中国国内最早最大的安卓软件和游戏下载平台，为百度91无线旗下知名产品（2013年被百度以19亿美元收购），为用户提供良好的手机软件服务</p>
+						</div>
+												<div class="portfolioItem portItemFix" data-type="design" data-id="22aa3">
+						<a href="javascript:showfolio('4');">
+							<img src="images/portImage4.jpg" alt="portfolio item image" />
+							</a>
+							<a href="javascript:showfolio('4');"><h2>360手机助手</h2></a>
+							<p>
+360手机助手是一款智能手机的资源获取平台。可以给用户提供海量的游戏、软件、音乐、小说、视频、图片，通过这款软件可以轻松下载、安装、管理手机资源，拥有海量资源一键安装、绿色无毒安全无忧和应用程序方便管理等功能</p>
+						</div>
+												<div class="portfolioItem" data-type="illustration" data-id="2a23">
+						<a href="javascript:showfolio('5');">
+							<img src="images/portImage5.jpg" alt="portfolio item image" />
+							</a>
+							<a href="javascript:showfolio('5');"><h2>百度浏览器</h2></a>
+							<p>快速、智能、极简的精品浏览器。六重加速体系、智能网址发现、极简设计风格，更有炫酷变色龙换肤效果、海量插件与应用和全面云安全体验，带来极致上网体验！</p>
+						</div>
+												<div class="portfolioItem" data-type="wp" data-id="2as23">
+						<a href="javascript:showfolio('6');">
+							<img src="images/portImage6.jpg" alt="portfolio item image" />
+							</a>
+							<a href="javascript:showfolio('6');"><h2>应用宝</h2></a>
+							<p>应用宝（原腾讯应用中心Android客户端）是腾讯应用中心专为智能手机用户倾力打造的应用软件获取平台，致力于为用户提供丰富安全的应用资源和覆盖应用整个生命周期的一站式应用管理体验</p>
+						</div>
+												<div class="portfolioItem" data-type="illustration" data-id="22d3">
+						<a href="javascript:showfolio('7');">
+							<img src="images/portImage7.jpg" alt="portfolio item image" />
+							</a>
+							<a href="javascript:showfolio('7');"><h2>iReader</h2></a>
+							<p>掌阅书城iReader阅读器是一款Android平台的读书软件,支持TXT, UMD, CHM, HTML/HTM, PDB, EBK2, EPUB等多种手机阅读格式的电子书阅读软件</p>
+						</div>
+												<div class="portfolioItem portItemFix" data-type="print" data-id="223aa">
+						<a href="javascript:showfolio('8');">
+							<img src="images/portImage8.jpg" alt="portfolio item image" />
+							</a>
+							<a href="javascript:showfolio('8');"><h2>腾讯新闻</h2></a>
+							<p>腾讯新闻是腾讯团队用心打造的一款丰富、及时的新闻应用，本着精炼、轻便的目标，为用户提供高效、优质的阅读体验。全球视野，聚焦中国，一朝在手，博览天下</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="portfolio-3">
+					<div class="slideshow  slideshow2 clearfix">
+						<div class="slideshowImage">
+							<img src="images/slide2Image1.jpg" alt="slide image" />
+							<div class="slideNav slideNav2 clearfix">
+								<a href="#" class="prev"></a>
+								<a href="#" class="next"></a>
+								<a href="#" class="exit"></a>
+							</div>
+						</div>
+						<div class="slideshowText">
+							<h2>Simpler Landing Page</h2>
+							<p class="jobDesc">Web Design&amp; Development</p>
+							<p class="client"><span>Client:</span> Theme Forest</p>
+							<p>
+								Sed ut perspiciatis unde omnis iste natus error sit voluptatemtam 
+								rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+								explicabo. Donec ut volutpat metus. Aliquam tortor lorem,  
+								Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+								rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+							</p>
+							<a href="#" class="readMore">Visit Website</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- PORTFOLIO SECTION END -->
+	</div>
+	
+	<div id="services">
+		<div class="container">
+			<div class="content">
+				<div class="contentTitle1">
+					<h1>服务</h1>
+				</div>
+				<div class="services-1 clearfix">
+					<div class="home-apps home-apps1">
+						<h4>Android App 推广</h4>
+						<p>各大小应用市场,安卓软件论坛,中小下载站,安卓评测网站等优质渠道</p>
+					</div>
+					<div class="home-apps home-apps2">
+						<h4>iOS App 推广</h4>
+						<p>iOS限免推荐APP,应用推荐APP,应用评测网站,iOS论坛等优质渠道</p>
+					</div>
+					<div class="home-apps home-apps3">
+						<h4>WP App 推广</h4>
+						<p>WP 评测网站,WP论坛,WP 应用推荐APP等优质投放渠道</p>
+					</div>
+					<div class="home-apps home-apps1">
+						<h4>网盟推广</h4>
+						<p>想让您的产品名扬天下吗?百度网盟,腾讯网盟专业代理,助你一臂之力</p>
+					</div>
+					<div class="home-apps home-apps2">
+						<h4>微信公众号开发,运营,推广</h4>
+						<p>本公司承接微信公众号开发,运营,推广等业务,为客户提供全方位,立体化的投放渠道</p>
+					</div>
+					<div class="home-apps home-apps3">
+						<h4>App 海外渠道推广</h4>
+						<p>想把APP卖到海外去,不知道从何入手,那就交给我们吧.我们有专业的团队协助客户解决本地化,客制化问题</p>
+					</div>
+				</div>
+			</div>
+		</div><!-- SERVICES SECTION END -->
+	</div>
+	
+	<div id="blog">
+		<div class="container">
+			<div class="content">
+				<div class="contentTitle1">
+					<h1>资讯</h1>
+				</div>
+				<div class="blog-1 clearfix">
+					<div class="blog-left">
+						<div class="blogTop clearfix">
+							<div class="blogInfo">
+								<div class="date">
+									<p>10<br /><span>Apr 2015</span></p>
+								</div>
+								<p>引用: <span>新浪时尚</span></p>
+								<p>分类: <span class="category">iOS, 行业观察</span></p>
+							</div>
+							<div class="blogImage">
+								<img src="images/blogImage1.jpg" alt="blog image" />
+							</div>
+						</div>
+						<div class="blogCenter">
+							<h1>六款捷足先登苹果智能手表的旅行App</h1>
+							<p>
+								导语：3月9号的苹果发布会上，苹果公司公布了苹果智能手表 Apple Watch 的售价及更多的功能细节，尽管正式上市还要等一个月，为苹果手表度身定制的各种酷炫 app 已经闪耀登场。鉴于手表轻便随身的特性，旅行相关的 app 成为主角之一也就不足为奇。
+							</p>
+							<a href="#" class="readMore">完整阅读</a>
+						</div>
+						<div class="blogBottom clearfix">
+						</div>
+					</div>
+					<div class="blog-right" >
+						<h2>最新资讯</h2>
+						<div class="recentPost clearfix">
+							<div class="recentPostImage">
+								<img src="images/recentPostImage1.jpg" alt="recent post image" />
+							</div>
+							<div class="recentPostText">
+								<h3>谷歌智能手表努力适配iOS：苹果怎会引狼入室！</h3>
+								<p>
+									Apple Watch马上就要来了，虽然外媒评测提出了不少缺点，但毕竟是姓“苹果”的，还是获得了极大的关注度。而另一方面，已经在智能手表领域耕耘了一段时间的“老司机”谷歌自然不会坐视不理
+								</p>
+							</div>
+						</div>
+						<div class="recentPost clearfix">
+							<div class="recentPostImage">
+								<img src="images/recentPostImage1.jpg" alt="recent post image" />
+							</div>
+							<div class="recentPostText">
+								<h3>App推广必读：如何评估推广渠道的用户质量</h3>
+								<p>
+									百度搜索“应用推广联盟”有超过搜索七千万的结果。渠道数量过多，鱼龙混杂，想要挑选出合适的优质渠道，却不容易。甚至有开发者曾经吐槽“数万元推广费用，获得上万激活量，只有7个真实用户！”
+								</p>
+							</div>
+						</div>
+						<div class="recentPost recentPostLast clearfix">
+							<div class="recentPostImage">
+								<img src="images/recentPostImage1.jpg" alt="recent post image" />
+							</div>
+							<div class="recentPostText">
+								<h3>如何使微信公众号得到迅速推广</h3>
+								<p>如今微信公众号众多，如何做到在搜素同样的词汇当中，你的微信公众号的搜索中脱颖而出。根据腾讯官方的说法，微信不是营销工具，而需要突出互动沟通、服务定制。
+								</p>
+							</div>
+						</div>
+						<a href="#" class="readMore">了解更多</a>
+					</div>
+				</div>
+			</div>
+		</div><!-- BLOG SECTION END -->
+	</div>
+	
+	<div id="contact">
+		<div class="container">
+			<div class="content">
+				<div class="contentTitle1">
+					<h1>联系我们</h1>
+				</div>
+				<div class="contact-1 clearfix">
+					<div class="contact-left">
+						<div class="companyAddress">
+                            <div class="Address1">
+                                <h3>广州市香语科技有限公司</h3>
+                                <p>中国广东省广州市</p>
+                                <p>越秀区恒福路304号</p>
+                                <p>恒福大厦5楼</p>
+							</div>
+						</div>
+						<div class="contactInfo clearfix">
+							<div class="contactNumber">
+								<p>020-87681111</p>
+								<p>020-87682222</p>
+							</div>
+							<div class="contactEmail">
+								<p>Info@xymedia.com</p>
+								<p>sales@xymedia.com</p>
+							</div>
+						</div>
+					</div>
+					<div class="contact-right">
+						<!--百度地图容器-->
+                        <div style="width:500;height:256px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+					</div>
+				</div>
+			</div>
+		</div><!-- CONTACT SECTION END -->
+	</div>
+	
+	<div id="footer">
+		<div>
+			<p>Copyright &copy; 2014.香语传媒 All rights reserved.</p>
+		</div>
+	</div>
+    <script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(113.294479,23.150033),17);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"广州市香语科技有限公司",title:"广州市香语科技有限公司",imageOffset: {width:0,height:3},position:{lat:23.150565,lng:113.299779}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:1});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:false});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
+</body>
+</html>
